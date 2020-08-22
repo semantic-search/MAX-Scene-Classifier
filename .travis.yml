@@ -1,0 +1,19 @@
+language: python
+python:
+  - 3.6
+
+services:
+  - docker
+
+install:
+  - docker build -t max-scene-classifier .
+  - docker run -it -d -p 5000:5000 max-scene-classifier
+
+before_script:
+  - pip install -r requirements-test.txt
+  - bandit -r .
+  - sleep 30
+
+script:
+  - flake8 . --max-line-length=127
+  - pytest tests/test.py
