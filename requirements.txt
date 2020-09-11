@@ -4,3 +4,4 @@ pillow==6.2.1
 kafka-python
 redis
 python-dotenv
+mongoengine
