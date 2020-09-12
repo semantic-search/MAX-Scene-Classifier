@@ -5,7 +5,7 @@ docker build -t max-scene-classifier .
 ```
 
 ```
-$ docker run -it  --env-file .env max-scene-classifier
+docker run -it  --env-file .env max-scene-classifier
 ```
 
 ```git

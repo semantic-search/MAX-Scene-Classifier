@@ -32,7 +32,7 @@ logger = logging.getLogger()
 
 def read_image(image_data):
     try:
-        image = Image.open(io.BytesIO(image_data)).convert('RGB')
+        image = Image.open(image_data).convert('RGB')
     except Exception as e:
         logger.warn(str(e))
         from flask import abort
